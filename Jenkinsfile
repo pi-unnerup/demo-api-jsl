@@ -1,20 +1,16 @@
-jsl = library(
-  identifier: 'jenkins-shared-library@docker-build',
-  retriever: modernSCM(
-    [
-      $class: 'GitSCMSource',
-      remote: 'https://github.com/controlplaneio/jenkins-shared-library.git'
-    ]
-  )
-)
+library identifier: 'jenkins-shared-library@docker-build',
+        retriever: modernSCM(
+          [
+            $class: 'GitSCMSource',
+            remote: 'https://github.com/controlplaneio/jenkins-shared-library.git'
+          ])
 
-buildImage([jsl: jsl])
-  .(
+buildImage
     branch: 'master',
-    scmUrl: 'https://github.com/pi-unnerup/demo-api-jsl.git',
+    scmUrl: 'https://github.com/pi-unnerup/demo-api-jsl.git'
     registry: 'controlplane',
     image_name: 'demo-api'
-  )
+    
   // .unitTest(
   //   command: 'My unit test command'
   // )
