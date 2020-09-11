@@ -5,12 +5,11 @@ library identifier: 'jenkins-shared-library@docker-build',
             remote: 'https://github.com/controlplaneio/jenkins-shared-library.git'
           ])
 
-buildImage
-    branch: 'master',
-    scmUrl: 'https://github.com/pi-unnerup/demo-api-jsl.git'
+buildImage(branch: 'master',
+    scmUrl: 'https://github.com/pi-unnerup/demo-api-jsl.git',
     registry: 'controlplane',
-    image_name: 'demo-api'
-    
+    image_name: 'demo-api')
+
   // .unitTest(
   //   command: 'My unit test command'
   // )
