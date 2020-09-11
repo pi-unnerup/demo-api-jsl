@@ -1,9 +1,13 @@
-library identifier: 'jenkins-shared-library@docker-build',
-        retriever: modernSCM(
-          [
-            $class: 'GitSCMSource',
-            remote: 'https://github.com/controlplaneio/jenkins-shared-library.git'
-          ])
+
+@Library('jenkins-shared-library@docker-build') _
+// if library isn't loaded in jenkins:
+
+// library identifier: 'jenkins-shared-library@docker-build',
+//         retriever: modernSCM(
+//           [
+//             $class: 'GitSCMSource',
+//             remote: 'https://github.com/controlplaneio/jenkins-shared-library.git'
+//           ])
 
 buildImage(branch: 'master',
     scmUrl: 'https://github.com/pi-unnerup/demo-api-jsl.git',
