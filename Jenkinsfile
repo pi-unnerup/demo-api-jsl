@@ -9,7 +9,9 @@ jsl = library(
 )
 
 buildImage([jsl: jsl])
-  .build(
+  .(
+    branch: 'master',
+    scmUrl: 'https://github.com/pi-unnerup/demo-api-jsl.git'
     registry: 'controlplane',
     image_name: 'demo-api'
   )
